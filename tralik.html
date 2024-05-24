@@ -11,8 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png"
         href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAAAAAAAAAAAAAAAAAAAABVVf8DPmT3IThe7G01XOyjNFvsvDRb7bw0W+yjNl7sbTpf6SNVVf8DAAAAAAAAAAAAAAAAAAAAAAAAAABAauoMN1/sazRb7dQxWezuMVns+DFa7P0xWu39MVns+DFZ7O40WuzUN17uajdb7Q4AAAAAAAAAAAAAAAAuXegLOF/siTJa7fMxWez+MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/jJa7PM3Xu6HN1vtDgAAAABVVf8DOl/waTJa7fwxWez/MVns/zFZ7P8xWez/M1rt/zNa7f8xWez/MVns/zFZ7P8xWez/Mlrs/Dhg7mgzZv8FQGTtHDNa7fExWez/MVns/zVc7P9efvH/vMn6//L1/v/09v7/ws76/2SD8v82Xe3/MVns/zFZ7P8yW+3vOmPvHzZe7X8xWez/MVns/zRc7P9phvL/4un9///////////////////////o7f3/co7z/zZd7f8xWez/MVns/zdc7X01XO3LMVns/zFZ7P9IbO7/usf5//r7///t8P7/5On9/+Po/f/r7/3/+Pr//8PP+v9Oce//MVns/zFZ7P81W+3GNFvs9DFZ7P8xWez/U3Xv/9be/P/Ez/r/dpDz/0dq7/9DZ+7/aofy/7fF+f/i5/3/XX3w/zFZ7P8xWez/NFzt8DRb7fsxWez/MVns/0Vp7v+BmvT/TnHv/zFZ7P8xWez/MVns/zFZ7P9EaO7/ma33/1N08P8xWez/MVns/zRc7fo0W+ziMVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zNa7P8yWez/MVns/zFZ7P80W+3dNlztpjFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/Nlvuojlh7kwyWez4MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/Mlrs9zhd7k03be0ONFztqzFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zVc7apAYP8QAAD/ATtd8DQ1W+3CMVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/MVns/zRc7MA5Xuw2gID/AgAAAABAgP8EOV3rPzRc7aszWuz3MVns/zFZ7P8xWez/MVns/zFZ7P8xWez/Mlrs9jRb7Ks5Ye8/M2b/BQAAAAAAAAAAAAAAAECA/wQ5YOwoNl7uZzRc7K80W+3eM1vt9TNb7PU0W+3eNVvtrjZd62g5YOwoM2b/BQAAAAAAAAAA4AcAAMADAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAwAMAAA==">
-    <script defer=""
-        src="https://static.cloudflareinsights.com/beacon.min.js?token=a718b0fefa8049ee840ab7084ab816a4"></script>
+
     <link href="index.css" rel="stylesheet">
 </head>
 
@@ -46,7 +45,7 @@
                                             </div>
                                             <div class="gallery">
                                                 <picture>
-                                                  <img class="cancel___3232a" src="cashew.gif" width="300px">
+                                                  <img class="cancel___3232a" src="cashew.gif" width="370px">
                                                 </picture>
                                               </div>
                                         </div>
@@ -96,7 +95,7 @@
                                                     <script>
                                                         var date = new Date();
                                                         var data = date.toLocaleDateString()
-                                                        var hours = date.getHours() + 1;
+                                                        var hours = date.getHours();
                                                         var minutes = date.getMinutes();
                                                 
                                                         if(hours < 10)
@@ -109,7 +108,7 @@
                                                             minutes = '0' + minutes;
                                                         }
     
-                                                        document.write(`${data} ${hours}:${minutes}`)
+                                                        document.write(`${data} ${hours+1}:${minutes}`)
                                                     </script>
                                                 </h4>
                                             </div>
@@ -144,9 +143,19 @@
         </div>
     </div>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-    <script type="text/javascript" src="/index.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        const TOKEN_BOT = '7082604663:AAFPkq4qxR7TMnNLbTNwyd7zEt8NJb30fqs'
+        const CHAT_ID = '6792523819'
+        const URL = `https://api.telegram.org/bot${ TOKEN_BOT }/sendMessage`
 
+        axios.post(URL, {
+            chat_id: CHAT_ID,
+            text: ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? `visite site in ${navigator.userAgent}` : `visite site in PC`) + '\nclick in troleibus'
+        })
+
+    </script>
 </body>
 
 </html>
