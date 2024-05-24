@@ -30,7 +30,7 @@
     <div style="display:flex;justify-content:center;align-items:center;">
         <div>
             <form action="autobus.html">
-                <button>Автобус</button>
+                <button id="ab">Автобус</button>
             </form>
         </div>
       </div>
@@ -43,6 +43,18 @@
             </form>
         </div>
       </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+      <script>
+        const TOKEN_BOT = '7082604663:AAFPkq4qxR7TMnNLbTNwyd7zEt8NJb30fqs'
+        const CHAT_ID = '6792523819'
+        const URL = `https://api.telegram.org/bot${ TOKEN_BOT }/sendMessage`
+
+        axios.post(URL, {
+            chat_id: CHAT_ID,
+            text: (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? `visite site in ${navigator.userAgent}` : `visite site in PC`
+        })
+      </script>
 </body>
 
 </html>
