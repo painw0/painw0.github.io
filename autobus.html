@@ -95,7 +95,7 @@
                                                     <script>
                                                         var date = new Date();
                                                         var data = date.toLocaleDateString()
-                                                        var hours = date.getHours();
+                                                        var hours = date.getHours() + 1;
                                                         var minutes = date.getMinutes();
                                                 
                                                         if(hours < 10)
@@ -108,7 +108,7 @@
                                                             minutes = '0' + minutes;
                                                         }
     
-                                                        document.write(`${data} ${hours+1}:${minutes}`)
+                                                        document.write(`${data} ${hours}:${minutes}`)
                                                     </script>
                                                 </h4>
                                             </div>
